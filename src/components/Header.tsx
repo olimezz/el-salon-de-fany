@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, Calendar, Menu, X, MapPin, Sparkles, MessageCircle, Clock } from "lucide-react";
+import { Phone, Calendar, Menu, X, MapPin, ShoppingBag, MessageCircle, Clock } from "lucide-react";
 import { SALON_INFO } from "@/data/salon-data";
 
 interface HeaderProps {
@@ -12,11 +12,12 @@ interface HeaderProps {
 }
 
 const NAV_LINKS = [
-  { href: "#servicios", label: "Servicios & Hair Spá" },
-  { href: "#resenas", label: "Reseñas (122+)" },
-  { href: "#equipo", label: "Fany & Equipo" },
-  { href: "#galeria", label: "Galería & I.C.O.N." },
-  { href: "#ubicacion", label: "Ubicación & Horarios" },
+  { href: "#el-salon", label: "El Salón" },
+  { href: "#tienda-online", label: "Tienda Online" },
+  { href: "#equipo", label: "Equipo" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#galeria", label: "Galería" },
+  { href: "#contacto", label: "Contacto" },
 ];
 
 export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: HeaderProps) {
@@ -58,10 +59,15 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1 text-champagne font-medium">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Salón Oficial I.C.O.N. · Desde 2014</span>
-            </span>
+            <a
+              href={SALON_INFO.shopUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-champagne hover:text-white font-semibold transition-colors"
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>Tienda Oficial I.C.O.N.</span>
+            </a>
             <a
               href={`tel:${SALON_INFO.phoneE164}`}
               className="hover:text-champagne transition-colors font-semibold"
@@ -72,32 +78,29 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
         </div>
       </div>
 
-      {/* Header Principal Sticky */}
+      {/* Header Principal Sticky con el Logo Floral Oficial */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-ivory/95 backdrop-blur-md shadow-editorial border-b border-borderWarm py-2.5"
-            : "bg-ivory/90 backdrop-blur-sm py-3.5 border-b border-borderWarm/60"
+            ? "bg-white/95 backdrop-blur-md shadow-editorial border-b border-borderWarm py-2"
+            : "bg-white/95 backdrop-blur-sm py-2.5 border-b border-borderWarm/70"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
-          {/* Logo Monograma + Tipografía Editorial */}
+          {/* Logo Floral Oficial de El Salón de Fany */}
           <Link
             href="/"
-            className="group flex items-center gap-3 min-h-[44px] focus:outline-none"
-            aria-label="El Salón de Fany - Inicio"
+            className="group flex items-center gap-3 min-h-[48px] focus:outline-none shrink-0"
+            aria-label="El Salón de Fany - Belleza & Spa - Inicio"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-charcoal text-ivory flex items-center justify-center font-serif text-xl sm:text-2xl font-semibold tracking-wider border border-champagne/50 group-hover:bg-terracotta transition-colors">
-              F
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-charcoal leading-none">
-                El Salón de Fany
-              </span>
-              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-terracotta font-semibold mt-1">
-                Peluquería & Hair Spá · Valencia
-              </span>
-            </div>
+            <img
+              src={SALON_INFO.logoUrl}
+              alt="El Salón de Fany — Belleza & Spa"
+              width={185}
+              height={95}
+              fetchPriority="high"
+              className="h-12 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
           </Link>
 
           {/* Navegación Desktop */}
@@ -106,7 +109,7 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
               <a
                 key={item.href}
                 href={item.href}
-                className="min-h-[44px] px-3.5 py-2 rounded-xl text-sm font-medium text-charcoal/85 hover:text-terracotta hover:bg-sand/70 transition-colors inline-flex items-center"
+                className="min-h-[44px] px-3.5 py-2 rounded-xl text-sm font-semibold text-charcoal/85 hover:text-terracotta hover:bg-sand/70 transition-colors inline-flex items-center"
               >
                 {item.label}
               </a>
@@ -116,9 +119,20 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
           {/* Acciones rápidas derecha */}
           <div className="flex items-center gap-2">
             <a
+              href={SALON_INFO.shopUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ir a la Tienda Online I.C.O.N."
+              className="hidden xl:inline-flex min-h-[44px] px-3.5 py-2 rounded-xl border border-champagne/60 bg-ivory hover:bg-sand text-charcoal items-center gap-1.5 text-xs font-semibold transition-all"
+            >
+              <ShoppingBag className="w-3.5 h-3.5 text-terracotta" />
+              <span>Tienda I.C.O.N.</span>
+            </a>
+
+            <a
               href={`tel:${SALON_INFO.phoneE164}`}
               aria-label={`Llamar al salón: ${SALON_INFO.phoneDisplay}`}
-              className="min-w-[44px] min-h-[44px] px-3 rounded-xl border border-borderWarm bg-white hover:border-terracotta text-charcoal inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all"
+              className="min-w-[44px] min-h-[44px] px-3 rounded-xl border border-borderWarm bg-ivory hover:border-terracotta text-charcoal inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all"
             >
               <Phone className="w-4 h-4 text-terracotta" />
               <span className="hidden sm:inline">{SALON_INFO.phoneDisplay}</span>
@@ -157,23 +171,19 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
           aria-label="Menú móvil de El Salón de Fany"
           className="fixed inset-0 z-[65] lg:hidden flex flex-col bg-ivory text-charcoal overflow-y-auto"
         >
-          <div className="px-4 py-3.5 border-b border-borderWarm flex items-center justify-between bg-sand/60">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-charcoal text-ivory flex items-center justify-center font-serif text-xl font-semibold">
-                F
-              </div>
-              <div>
-                <p className="font-serif text-xl font-semibold text-charcoal leading-none">El Salón de Fany</p>
-                <p className="text-[11px] text-terracotta font-semibold uppercase tracking-wider mt-0.5">
-                  Desde 2014 en Valencia
-                </p>
-              </div>
-            </div>
+          <div className="px-4 py-3 border-b border-borderWarm flex items-center justify-between bg-white">
+            <img
+              src={SALON_INFO.logoUrl}
+              alt="El Salón de Fany — Belleza & Spa"
+              width={150}
+              height={76}
+              className="h-12 w-auto object-contain"
+            />
             <button
               type="button"
               onClick={() => setIsDrawerOpen(false)}
               aria-label="Cerrar menú"
-              className="min-w-[44px] min-h-[44px] rounded-xl bg-white border border-borderWarm flex items-center justify-center text-charcoal"
+              className="min-w-[44px] min-h-[44px] rounded-xl bg-ivory border border-borderWarm flex items-center justify-center text-charcoal"
             >
               <X className="w-5 h-5" />
             </button>
@@ -186,7 +196,7 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsDrawerOpen(false)}
-                  className="min-h-[48px] px-4 py-3 rounded-xl bg-white border border-borderWarm/80 hover:border-terracotta flex items-center justify-between font-serif text-xl font-medium text-charcoal transition-all"
+                  className="min-h-[48px] px-4 py-3 rounded-xl bg-white border border-borderWarm/80 hover:border-terracotta flex items-center justify-between font-serif text-xl font-semibold text-charcoal transition-all"
                 >
                   <span>{item.label}</span>
                   <span className="text-terracotta text-sm font-sans">→</span>
@@ -207,6 +217,17 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
               </div>
 
               <div className="grid grid-cols-1 gap-2.5">
+                <a
+                  href={SALON_INFO.shopUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="min-h-[48px] w-full px-5 py-3 rounded-xl bg-white border border-champagne text-charcoal font-semibold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+                >
+                  <ShoppingBag className="w-4 h-4 text-terracotta" />
+                  <span>Ir a la Tienda Online I.C.O.N.</span>
+                </a>
+
                 <button
                   type="button"
                   onClick={() => {
@@ -229,7 +250,7 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
                   className="min-h-[48px] w-full px-5 py-3 rounded-xl bg-terracotta hover:bg-terracottaDark text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md transition-colors"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp directo · {SALON_INFO.phoneDisplay}</span>
+                  <span>Comenzar Chat WhatsApp · {SALON_INFO.phoneDisplay}</span>
                 </a>
               </div>
             </div>

@@ -12,7 +12,7 @@ import {
   ChevronUp,
   Flower2,
 } from "lucide-react";
-import { SALON_SERVICES, SALON_INFO, ServiceCategory } from "@/data/salon-data";
+import { SALON_SERVICES, SALON_INFO, HAIR_SPA_IMAGES, ServiceCategory } from "@/data/salon-data";
 
 interface ServicesSectionProps {
   onOpenBookingModal: (defaultService?: string) => void;
@@ -20,8 +20,8 @@ interface ServicesSectionProps {
 
 const CATEGORIES: ServiceCategory[] = [
   "Todo",
-  "Peluquería y Color",
   "Hair Spá y Masajes",
+  "Peluquería y Color",
   "Maderoterapia y Estética",
   "Eventos y Manicura",
 ];
@@ -44,45 +44,57 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
     <section
       id="servicios"
       aria-labelledby="services-heading"
-      className="py-16 sm:py-20 lg:py-24 bg-ivory border-b border-borderWarm scroll-mt-20"
+      className="py-16 sm:py-20 lg:py-24 bg-sand/60 border-b border-borderWarm scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
-        {/* Encabezado Editorial */}
+        {/* Encabezado con el texto oficial de Servicios de elsalondefany.com */}
         <div className="max-w-3xl space-y-4">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sand border border-champagne/50 text-xs font-semibold uppercase tracking-widest text-terracotta">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ivory border border-champagne/50 text-xs font-semibold uppercase tracking-widest text-terracotta">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Carta de Servicios Unisex & Rituales I.C.O.N.</span>
+            <span>Servicios Unisex · I.C.O.N. · Hair Spá · Estética</span>
           </span>
           <h2
             id="services-heading"
             className="font-serif text-fluid-h2 font-semibold text-charcoal leading-tight"
           >
-            Peluquería consciente, <span className="italic font-normal text-terracotta">Hair Spá</span> y
-            estética integral en Valencia
+            Nuestros Servicios y <span className="italic font-normal text-terracotta">Hair Spá</span> en
+            Valencia
           </h2>
           <p className="text-fluid-body text-warmGray leading-relaxed">
-            Desde un corte para sanear y dar movimiento hasta coloración luminosa, recogidos para eventos,
-            maderoterapia corporal y nuestros famosos masajes relajantes en el cuero cabelludo.
+            En nuestro salón trabajamos con productos de marcas de altísima calidad como{" "}
+            <strong className="text-charcoal">I.C.O.N.</strong>, que acompañan la técnica y experiencia de
+            nuestros estilistas para ofrecer a cada cliente un acabado perfecto y cuidado. Desde un{" "}
+            <strong className="text-charcoal">corte para sanear el cabello</strong> hasta{" "}
+            <strong className="text-charcoal">recogidos y peinados especiales para eventos</strong>, pasando por{" "}
+            <strong className="text-charcoal">coloraciones y mechas</strong>, en El Salón de Fany encontrarás un
+            espacio unisex con tratamientos especiales como la{" "}
+            <strong className="text-charcoal">maderoterapia</strong> y servicios de{" "}
+            <strong className="text-charcoal">manicura y estética</strong>.
           </p>
         </div>
 
-        {/* Bloque Destacado Especial: Ritual Hair Spá */}
-        <div className="rounded-3xl bg-charcoal text-ivory p-6 sm:p-8 lg:p-10 border border-champagne/30 shadow-editorial overflow-hidden relative">
+        {/* Bloque Especial Hair Spá con las 4 Fotos Originales (hairspa1, hairspa4, hairspa4-1, hairspa3) */}
+        <div className="rounded-3xl bg-charcoal text-ivory p-6 sm:p-8 lg:p-10 border border-champagne/30 shadow-editorial overflow-hidden space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta/25 border border-champagne/40 text-champagne text-xs font-semibold uppercase tracking-wider">
                 <Flower2 className="w-3.5 h-3.5" />
-                <span>El corazón de nuestro salón · Hair Spá Valencia</span>
+                <span>Especialidad Hair Spá · Relajación Capilar y Corporal</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold text-ivory leading-tight">
-                ¿Necesitas desconectar? Descubre nuestro Hair Spá con masaje relajante en el cuero cabelludo
+                ¿Te gustan los masajes en la cabeza? Entonces esto es para ti…
               </h3>
-              <p className="text-sm sm:text-base text-ivory/85 leading-relaxed max-w-2xl">
-                En El Salón de Fany transformamos el momento del lavado en una terapia sensorial: aromaterapia
-                botánica <strong>I.C.O.N.</strong>, presión craneal descontracturante, oxigenación folicular y
-                calma absoluta para renovar tu energía y devolver un brillo extraordinario a tu melena.
+              <p className="text-sm sm:text-base text-ivory/90 leading-relaxed italic font-serif">
+                «Imagina este momento… Cierras los ojos, respiras profundo y sientes cómo tus preocupaciones
+                desaparecen con cada movimiento de nuestras manos en tu cuero cabelludo.»
+              </p>
+              <p className="text-xs sm:text-sm text-ivory/80 leading-relaxed">
+                En <strong>El Salón de Fany</strong>, no solo cuidamos tu cabello, sino también tu bienestar.
+                Somos expertas en relajación capilar y corporal, y todas nuestras clientas coinciden en algo:{" "}
+                <strong className="text-champagne">AMAN nuestros masajes mientras aplicamos los tratamientos</strong>.
               </p>
             </div>
+
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
               <button
                 type="button"
@@ -93,8 +105,8 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                 <span>Reservar Ritual Hair Spá</span>
               </button>
               <a
-                href={`https://wa.me/${SALON_INFO.whatsappNumber}?text=${encodeURIComponent(
-                  "Hola El Salón de Fany, me gustaría consultar información y cita para el Ritual Hair Spá."
+                href={`https://api.whatsapp.com/send?phone=${SALON_INFO.whatsappNumber}&text=${encodeURIComponent(
+                  "Hola El Salón de Fany, me gustaría reservar cita para el Hair Spá y masaje en el cuero cabelludo."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -104,6 +116,29 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                 <span>Preguntar por WhatsApp</span>
               </a>
             </div>
+          </div>
+
+          {/* Las 4 fotos originales de Hair Spá del sitio elsalondefany.com */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
+            {HAIR_SPA_IMAGES.map((img) => (
+              <div
+                key={img.id}
+                className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-champagne/30 group"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={576}
+                  height={768}
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
+                <span className="absolute bottom-2.5 left-2.5 right-2.5 text-xs font-semibold text-ivory bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-lg text-center">
+                  {img.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -125,7 +160,7 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                 className={`min-h-[44px] px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
                   active
                     ? "bg-charcoal text-ivory shadow-sm"
-                    : "bg-sand/80 hover:bg-sand text-charcoal border border-borderWarm"
+                    : "bg-white hover:bg-ivory text-charcoal border border-borderWarm"
                 }`}
               >
                 {category}
@@ -134,8 +169,8 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
           })}
         </div>
 
-        {/* Grid de Servicios */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Grid de Servicios con fotos reales del salón */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => {
             const isExpanded = expandedServiceId === service.id;
             return (
@@ -148,19 +183,18 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                 className="rounded-3xl bg-white border border-borderWarm shadow-editorial hover:shadow-editorial-hover transition-all duration-300 overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  {/* Imagen con aspect-ratio fijo para evitar CLS */}
-                  <div className="relative aspect-[16/9] bg-sand overflow-hidden">
+                  <div className="relative aspect-[4/3] bg-sand overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
                       loading="lazy"
-                      width={800}
+                      width={600}
                       height={450}
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-transparent to-transparent" />
 
-                    <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2">
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
                       <span className="px-3 py-1 rounded-full bg-ivory/95 backdrop-blur-sm text-charcoal text-xs font-semibold">
                         {service.category}
                       </span>
@@ -171,34 +205,32 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                       )}
                     </div>
 
-                    <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-xs text-ivory/95 font-medium">
-                      <span className="inline-flex items-center gap-1.5 bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-lg">
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-ivory/95 font-medium">
+                      <span className="inline-flex items-center gap-1 bg-charcoal/75 backdrop-blur-sm px-2.5 py-1 rounded-lg">
                         <Clock className="w-3.5 h-3.5 text-champagne" />
                         <span>{service.duration}</span>
                       </span>
-                      <span className="bg-charcoal/70 backdrop-blur-sm px-2.5 py-1 rounded-lg text-champagne font-semibold">
+                      <span className="bg-charcoal/75 backdrop-blur-sm px-2.5 py-1 rounded-lg text-champagne font-semibold">
                         {service.priceHint}
                       </span>
                     </div>
                   </div>
 
-                  {/* Cuerpo de la Card */}
-                  <div className="p-6 space-y-3">
-                    <h3 className="font-serif text-fluid-h3 font-semibold text-charcoal leading-snug">
+                  <div className="p-5 space-y-2.5">
+                    <h3 className="font-serif text-xl sm:text-2xl font-semibold text-charcoal leading-snug">
                       {service.title}
                     </h3>
-                    <p className="text-sm font-medium text-terracotta">{service.tagline}</p>
-                    <p className="text-sm text-warmGray leading-relaxed">{service.description}</p>
+                    <p className="text-xs sm:text-sm font-medium text-terracotta">{service.tagline}</p>
+                    <p className="text-xs sm:text-sm text-warmGray leading-relaxed">{service.description}</p>
 
-                    {/* Acordeón interactivo: Ver qué incluye */}
-                    <div className="pt-2">
+                    <div className="pt-1">
                       <button
                         type="button"
                         onClick={() => toggleDetails(service.id)}
                         aria-expanded={isExpanded}
-                        className="min-h-[44px] w-full px-4 py-2.5 rounded-xl bg-sand/70 hover:bg-sand text-charcoal text-xs sm:text-sm font-semibold flex items-center justify-between transition-colors"
+                        className="min-h-[44px] w-full px-3.5 py-2 rounded-xl bg-sand/70 hover:bg-sand text-charcoal text-xs font-semibold flex items-center justify-between transition-colors"
                       >
-                        <span>{isExpanded ? "Ocultar detalles del servicio" : "Ver qué incluye este servicio"}</span>
+                        <span>{isExpanded ? "Ocultar detalles" : "Ver qué incluye"}</span>
                         {isExpanded ? (
                           <ChevronUp className="w-4 h-4 text-terracotta" />
                         ) : (
@@ -207,14 +239,11 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                       </button>
 
                       {isExpanded && (
-                        <div className="mt-3 p-4 rounded-2xl bg-ivory border border-borderWarm space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wider text-terracotta">
-                            Paso a paso en El Salón de Fany:
-                          </p>
-                          <ul className="space-y-2 text-xs sm:text-sm text-charcoal/90">
+                        <div className="mt-2.5 p-3.5 rounded-2xl bg-ivory border border-borderWarm space-y-1.5">
+                          <ul className="space-y-1.5 text-xs text-charcoal/90">
                             {service.includes.map((item, i) => (
                               <li key={i} className="flex items-start gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-3.5 h-3.5 text-terracotta shrink-0 mt-0.5" />
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -225,27 +254,26 @@ export function ServicesSection({ onOpenBookingModal }: ServicesSectionProps) {
                   </div>
                 </div>
 
-                {/* Pie de la Card con CTAs directos */}
-                <div className="px-6 pb-6 pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="px-5 pb-5 pt-2 grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     onClick={() => onOpenBookingModal(service.title)}
-                    className="min-h-[46px] px-4 py-2.5 rounded-xl bg-charcoal hover:bg-terracotta text-ivory text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-colors"
+                    className="min-h-[44px] px-3 py-2 rounded-xl bg-charcoal hover:bg-terracotta text-ivory text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
                   >
-                    <Calendar className="w-4 h-4 text-champagne shrink-0" />
-                    <span>Reservar este servicio</span>
+                    <Calendar className="w-3.5 h-3.5 text-champagne shrink-0" />
+                    <span>Reservar</span>
                   </button>
 
                   <a
-                    href={`https://wa.me/${SALON_INFO.whatsappNumber}?text=${encodeURIComponent(
+                    href={`https://api.whatsapp.com/send?phone=${SALON_INFO.whatsappNumber}&text=${encodeURIComponent(
                       service.whatsappMessage
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="min-h-[46px] px-4 py-2.5 rounded-xl bg-sand hover:bg-champagne/30 text-charcoal border border-borderWarm text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-colors"
+                    className="min-h-[44px] px-3 py-2 rounded-xl bg-sand hover:bg-champagne/30 text-charcoal border border-borderWarm text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
                   >
-                    <MessageCircle className="w-4 h-4 text-terracotta shrink-0" />
-                    <span>Consultar por WhatsApp</span>
+                    <MessageCircle className="w-3.5 h-3.5 text-terracotta shrink-0" />
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </motion.article>

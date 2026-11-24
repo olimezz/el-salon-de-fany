@@ -28,11 +28,11 @@ export function LocationContactSection() {
 
   return (
     <section
-      id="ubicacion"
+      id="contacto"
       aria-labelledby="location-heading"
       className="py-16 sm:py-20 lg:py-24 bg-sand/70 border-b border-borderWarm scroll-mt-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+      <div id="ubicacion" className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
         {/* Encabezado */}
         <div className="max-w-3xl space-y-3">
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ivory border border-champagne/50 text-xs font-semibold uppercase tracking-widest text-terracotta">

@@ -1,7 +1,7 @@
 export type ServiceCategory =
   | "Todo"
-  | "Peluquería y Color"
   | "Hair Spá y Masajes"
+  | "Peluquería y Color"
   | "Maderoterapia y Estética"
   | "Eventos y Manicura";
 
@@ -42,7 +42,7 @@ export interface GoogleReview {
   verified: boolean;
 }
 
-export type GalleryCategory = "Todo" | "Color y Mechas" | "Corte y Peinado" | "Hair Spá" | "Salón";
+export type GalleryCategory = "Todo" | "Trabajos & Color" | "Hair Spá" | "El Salón";
 
 export interface GalleryItem {
   id: string;
@@ -51,23 +51,21 @@ export interface GalleryItem {
   caption: string;
   technique: string;
   image: string;
-  aspect: string;
 }
 
-export interface IconProduct {
+export interface SalonCarouselSlide {
   id: string;
-  name: string;
-  line: string;
-  benefit: string;
-  description: string;
-  badge: string;
   image: string;
+  title: string;
+  subtitle: string;
 }
 
 export const SALON_INFO = {
   name: "El Salón de Fany",
-  tagline: "Peluquería Unisex, Hair Spá & Estética Avanzada en Valencia",
+  tagline: "Belleza & Spa · Peluquería Unisex, Hair Spá & I.C.O.N. en Valencia",
   claim: "Un salón familiar y profesional en el que hacemos sentir al cliente como en su casa.",
+  descriptionParagraph:
+    "El Salón de Fany, junto a la Ciudad de las Artes y las Ciencias en Valencia, tiene un ambiente desenfadado, acogedor y dinámico. Aquí cada cliente encontrará todo lo necesario para renovar su look y dejarse asesorar por grandes profesionales.",
   foundedYear: 2014,
   address: "Carrer d'Antonio Sacramento, 17-2",
   postalCode: "46013",
@@ -80,191 +78,216 @@ export const SALON_INFO = {
   email: "elsalondefany@gmail.com",
   googleRating: "4.9",
   googleReviewsCount: 122,
-  bookingUrl:
-    process.env.NEXT_PUBLIC_CITA_ONLINE_URL ||
-    "https://wa.me/34601125158?text=Hola%20El%20Sal%C3%B3n%20de%20Fany%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20previa",
-  shopUrl: process.env.NEXT_PUBLIC_TIENDA_ONLINE_URL || "#tienda-icon",
+  bookingUrl: "https://booksy.com/es-es/69875_el-salon-de-fany_peluqueria_58087_valencia",
+  shopUrl: "https://iconencasa.com/?ref=2362",
+  logoUrl: "/images/logo-el-salon-de-fany.png",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=El+Sal%C3%B3n+de+Fany+Carrer+d%27Antonio+Sacramento+17-2+46013+Valencia",
   googleMapsEmbedUrl:
-    "https://www.google.com/maps?q=Carrer+d'Antonio+Sacramento,+17-2,+46013+Valencia&output=embed",
+    "https://maps.google.com/maps?q=El%20Sal%C3%B3n%20de%20Fany%20Carrer%20d%27Antonio%20Sacramento%2017-2%20Valencia&t=m&z=17&output=embed&iwloc=near",
   socials: {
     instagram: "https://www.instagram.com/elsalondefany/",
-    facebook: "https://www.facebook.com/elsalondefany/",
+    facebook: "https://www.facebook.com/El-Sal%C3%B3n-de-Fany-861173177260416/",
   },
   schedule: [
     { days: "Martes a jueves", hours: "10:00 – 19:00 h", open: true },
     { days: "Viernes", hours: "10:00 – 20:00 h", open: true },
     { days: "Sábado", hours: "09:00 – 13:00 h", open: true },
-    { days: "Domingo y lunes", hours: "Cerrado (descanso semanal)", open: false },
+    { days: "Domingo y lunes", hours: "Cerrado", open: false },
   ],
 };
+
+export const SALON_CAROUSEL_SLIDES: SalonCarouselSlide[] = [
+  {
+    id: "slide-1",
+    image: "/images/salon/salon-1.jpg",
+    title: "Nuestro Espacio en Valencia",
+    subtitle: "Un ambiente desenfadado, acogedor y dinámico junto a la Ciudad de las Artes y las Ciencias.",
+  },
+  {
+    id: "slide-2",
+    image: "/images/salon/salon-2.jpg",
+    title: "Siéntete Como en Casa",
+    subtitle: "Un salón familiar y profesional diseñado para tu comodidad y desconexión.",
+  },
+  {
+    id: "slide-3",
+    image: "/images/salon/salon-3.jpg",
+    title: "Salón Oficial I.C.O.N. & Hair Spá",
+    subtitle: "Equipamiento de vanguardia y rincón de relajación capilar y corporal.",
+  },
+  {
+    id: "slide-4",
+    image: "/images/salon/salon-4.jpg",
+    title: "Zona de Tocadores & Estilismo",
+    subtitle: "Luz natural, amplitud y atención personalizada en cada detalle.",
+  },
+  {
+    id: "slide-5",
+    image: "/images/salon/salon-5.jpg",
+    title: "Rincón de Cuidado I.C.O.N.",
+    subtitle: "Las mejores líneas botánicas para el cuidado y salud de tu cabello.",
+  },
+  {
+    id: "slide-6",
+    image: "/images/salon/salon-6.jpg",
+    title: "Bienestar & Estética Integral",
+    subtitle: "Un espacio unisex pensado para renovar tu imagen y tu energía.",
+  },
+];
+
+export const HAIR_SPA_IMAGES = [
+  {
+    id: "hs-1",
+    src: "/images/hairspa/hairspa1.jpg",
+    alt: "Masaje relajante en el cuero cabelludo en El Salón de Fany",
+    label: "Masaje Craneal Relajante",
+  },
+  {
+    id: "hs-2",
+    src: "/images/hairspa/hairspa4.jpg",
+    alt: "Experiencia Hair Spá y bienestar capilar en Valencia",
+    label: "Ritual Hair Spá",
+  },
+  {
+    id: "hs-3",
+    src: "/images/hairspa/hairspa4-1.jpg",
+    alt: "Aplicación de tratamientos I.C.O.N. con masaje capilar",
+    label: "Terapia Botánica I.C.O.N.",
+  },
+  {
+    id: "hs-4",
+    src: "/images/hairspa/hairspa3.jpg",
+    alt: "Relajación capilar y corporal en nuestro Hair Spá",
+    label: "Desconexión & Calma",
+  },
+];
 
 export const SALON_SERVICES: SalonService[] = [
   {
     id: "hair-spa-ritual",
-    title: "Ritual Hair Spá & Masaje Craneal Relajante",
+    title: "Hair Spá & Masajes Relajantes en el Cuero Cabelludo",
     category: "Hair Spá y Masajes",
-    tagline: "Nuestra experiencia insignia para desconectar cuerpo y mente mientras revitalizas tu cuero cabelludo.",
+    tagline: "¿Te gustan los masajes en la cabeza? Entonces esto es para ti…",
     description:
-      "Un viaje sensorial en nuestro espacio Hair Spá con aromaterapia botánica I.C.O.N., oxigenación profunda del cuero cabelludo y masaje craneocervical descontracturante.",
+      "Imagina este momento: cierras los ojos, respiras profundo y sientes cómo tus preocupaciones desaparecen con cada movimiento de nuestras manos en tu cuero cabelludo mientras aplicamos los tratamientos I.C.O.N.",
     duration: "45 – 60 min",
-    priceHint: "Ritual estrella · Consulta personalizada",
+    priceHint: "Ritual Estrella · Productos I.C.O.N.",
     featured: true,
     badge: "Experiencia Estrella",
     iconBrand: true,
     includes: [
-      "Diagnóstico capilar y sensorial del cuero cabelludo",
-      "Exfoliación suave detoxificante o infusión hidratante I.C.O.N.",
-      "Masaje relajante profundo en cuero cabelludo, nuca y sienes",
-      "Envoltura térmica aromática y secado de bienestar",
+      "Diagnóstico capilar personalizado y aromaterapia botánica I.C.O.N.",
+      "Masaje lento y profundo en el cuero cabelludo mientras actúa el tratamiento",
+      "Oxigenación folicular, hidratación intensiva y alivio de tensiones",
+      "Acabado luminoso y asesoramiento para el cuidado en casa",
     ],
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/hairspa/hairspa1.jpg",
     whatsappMessage:
-      "Hola El Salón de Fany, me gustaría reservar o recibir información sobre el Ritual Hair Spá y masaje relajante.",
-  },
-  {
-    id: "corte-sanear-estilo",
-    title: "Corte para Sanear, Diseño & Estilo Unisex",
-    category: "Peluquería y Color",
-    tagline: "Cortes pensados para tu fisonomía, textura natural y comodidad en el día a día.",
-    description:
-      "Escuchamos exactamente lo que necesitas: desde sanear puntas respetando tu largo hasta cambios de look modernos para mujer y hombre, con asesoramiento honesto.",
-    duration: "45 min",
-    priceHint: "Servicio Unisex · Productos I.C.O.N.",
-    badge: "Unisex",
-    iconBrand: true,
-    includes: [
-      "Asesoramiento de visagismo y diagnóstico de fibra capilar",
-      "Lavado relajante en zona Hair Spá con champú específico I.C.O.N.",
-      "Corte técnico de precisión (saneado, capas, bob, fade o clásico)",
-      "Peinado de acabado y consejos prácticos de mantenimiento en casa",
-    ],
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=80",
-    whatsappMessage:
-      "Hola El Salón de Fany, querría pedir cita para corte y estilo.",
+      "Hola El Salón de Fany, me gustaría reservar cita para el ritual Hair Spá con masaje relajante en el cuero cabelludo.",
   },
   {
     id: "coloracion-mechas-icon",
-    title: "Coloración Consciente, Mechas & Balayage",
+    title: "Coloraciones, Mechas & Tratamientos I.C.O.N.",
     category: "Peluquería y Color",
-    tagline: "Luminosidad multidimensional, cobertura impecable y máximo respeto por la salud de tu cabello.",
+    tagline: "Productos de altísima calidad I.C.O.N. que acompañan la técnica de nuestros estilistas.",
     description:
-      "Trabajamos técnicas de luz a medida (Balayage, Babylights, Melting y coloración eco-friendly I.C.O.N.) para lograr tonos naturales, brillantes y duraderos sin castigar la melena.",
+      "Trabajamos coloración respetuosa, mechas luminosas, balayage y matices personalizados cuidando al máximo la salud y el brillo de la fibra capilar.",
     duration: "90 – 150 min",
     priceHint: "Diagnóstico previo incluido",
     featured: true,
-    badge: "Alta Demanda",
+    badge: "Color & Luz",
     iconBrand: true,
     includes: [
-      "Estudio cromático personalizado según subtono de piel",
-      "Fórmulas de coloración respetuosas libres de amoniaco o baja oxidación",
-      "Matización de brillo espejo y sellado de cutícula con tratamiento I.C.O.N.",
-      "Masaje capilar relajante y brushing/ondas de acabado",
+      "Asesoramiento cromático adaptado a tu estilo y facciones",
+      "Coloración y mechas con líneas profesionales I.C.O.N.",
+      "Lavado con nuestro famoso masaje relajante en el cuero cabelludo",
+      "Sellado de brillo y peinado de acabado perfecto",
     ],
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/galeria/trabajo-b-1.jpg",
     whatsappMessage:
-      "Hola El Salón de Fany, me gustaría pedir cita o valoración para coloración / mechas.",
+      "Hola El Salón de Fany, me gustaría pedir cita para coloración / mechas.",
   },
   {
-    id: "terapias-icon-hidratacion",
-    title: "Terapias Capilares I.C.O.N. (Detox, Inner & India)",
-    category: "Hair Spá y Masajes",
-    tagline: "Nutrición intensiva con ingredientes orgánicos, aceites esenciales y proteínas reparadoras.",
+    id: "corte-sanear-estilo",
+    title: "Corte para Sanear el Cabello & Estilo Unisex",
+    category: "Peluquería y Color",
+    tagline: "Espacio unisex donde adaptamos cada corte a tu estilo, textura y preferencias.",
     description:
-      "Recupera la elasticidad, el cuerpo y el brillo de cabellos secos, encrespados o sensibilizados combinando la ciencia botánica de I.C.O.N. con nuestro protocolo de masaje capilar.",
-    duration: "50 min",
-    priceHint: "Tratamiento intensivo en salón",
-    badge: "Partner Oficial I.C.O.N.",
+      "Desde un corte para sanear el cabello respetando tu largo hasta un cambio de look completo para mujer y hombre, con acabado impecable y fácil de mantener en casa.",
+    duration: "45 min",
+    priceHint: "Servicio Unisex · I.C.O.N.",
+    badge: "Unisex",
     iconBrand: true,
     includes: [
-      "Protocolo personalizado: Detox Shift, Hidratación Inner Home o Moringa & Argan India",
-      "Aplicación con masaje lento estimulante de la microcirculación",
-      "Aporte de aminoácidos, antioxidantes y vitaminas",
-      "Recomendación de rutina de continuidad en casa",
+      "Escucha activa y diagnóstico de visagismo",
+      "Lavado con champú y acondicionador específico I.C.O.N.",
+      "Corte técnico de precisión y saneado de puntas",
+      "Styling final y recomendaciones profesionales",
     ],
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/galeria/trabajo-b-3.jpg",
     whatsappMessage:
-      "Hola El Salón de Fany, me interesa un tratamiento capilar hidratante o detox con productos I.C.O.N.",
+      "Hola El Salón de Fany, querría pedir cita para corte de pelo.",
   },
   {
-    id: "maderoterapia-corporal",
-    title: "Maderoterapia Corporal, Remodelación & Bienestar",
+    id: "maderoterapia-estetica",
+    title: "Maderoterapia Corporal & Estética",
     category: "Maderoterapia y Estética",
-    tagline: "Técnica natural milenaria con instrumentos de madera anatómicos para drenar, tonificar y relajar.",
+    tagline: "Tratamientos especiales de bienestar corporal y estética que añaden valor a tu visita.",
     description:
-      "Sesiones manuales especializadas que activan el sistema linfático, mejoran la circulación, combaten la retención de líquidos y remodelan la silueta con una profunda sensación de ligereza.",
-    duration: "55 min",
-    priceHint: "Sesiones sueltas y bonos personalizados",
+      "Sesiones de maderoterapia natural y tratamientos de estética en cabina pensados para remodelar, drenar, tonificar y desconectar cuerpo y mente.",
+    duration: "50 – 60 min",
+    priceHint: "Sesiones y bonos disponibles",
     featured: true,
-    badge: "Especialidad Estética",
+    badge: "Bienestar Corporal",
     includes: [
-      "Valoración corporal inicial y selección de aceites esenciales drenantes",
-      "Activación ganglionar y masaje manual preparatorio",
-      "Trabajo específico con rodillos, copa sueca y tabla moldeadora de madera",
-      "Efecto drenante, anticelulítico, reafirmante y descontracturante",
+      "Valoración personalizada en cabina estética",
+      "Masaje remodelador y drenante con instrumentos anatómicos de madera",
+      "Activación de la circulación y reducción de retención de líquidos",
+      "Sensación inmediata de ligereza y relajación muscular",
     ],
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/hairspa/hairspa3.jpg",
     whatsappMessage:
-      "Hola El Salón de Fany, me gustaría informarme sobre las sesiones y bonos de Maderoterapia.",
+      "Hola El Salón de Fany, me gustaría informarme sobre las sesiones de Maderoterapia y estética.",
   },
   {
-    id: "estetica-facial-corporal",
-    title: "Estética Facial, Cuidado de Mirada & Depilación",
-    category: "Maderoterapia y Estética",
-    tagline: "Cabina de estética pensada para mimar tu piel con cercanía, higiene rigurosa y resultados visibles.",
-    description:
-      "Higienes faciales profundas, hidratación luminosa, diseño de cejas y rituales calmantes de cabina para que salgas renovada de pies a cabeza en una sola visita.",
-    duration: "30 – 60 min",
-    priceHint: "Cabina de estética privada",
-    includes: [
-      "Limpieza facial oxigenante y extracción suave",
-      "Mascarillas calmantes y masaje facial reafirmante",
-      "Diseño y depilación cuidadosa de cejas y rostro",
-      "Ambiente silencioso, cálido y climatizado",
-    ],
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80",
-    whatsappMessage:
-      "Hola El Salón de Fany, quisiera consultar cita para tratamiento de estética facial.",
-  },
-  {
-    id: "recogidos-eventos-valencia",
-    title: "Recogidos, Peinados de Invitada & Eventos Especiales",
+    id: "recogidos-peinados-eventos",
+    title: "Recogidos y Peinados Especiales para Eventos",
     category: "Eventos y Manicura",
-    tagline: "Creaciones elegantes y duraderas para bodas, fallas, graduaciones y celebraciones en Valencia.",
+    tagline: "Looks elegantes, duraderos y a medida para bodas, celebraciones y eventos en Valencia.",
     description:
-      "Diseñamos recogidos artesanales, semirrecogidos románticos, trenzas boho y ondas al agua que respetan tu estilo personal y aguantan impecables toda la celebración.",
+      "Creamos recogidos, semirrecogidos, ondas y peinados especiales adaptados a tu vestido y personalidad para que brilles con total comodidad durante todo el evento.",
     duration: "60 – 90 min",
-    priceHint: "Asesoramiento previo disponible",
-    badge: "Eventos & Invitadas",
+    priceHint: "Eventos & Invitadas",
+    badge: "Eventos",
     includes: [
-      "Preparación textil del cabello con productos de fijación flexible I.C.O.N.",
-      "Diseño adaptado al vestido, escote y complementos o tocado",
-      "Sujeción cómoda y segura que dura horas sin tiranteces",
-      "Opción de combinar con maquillaje y manicura en el salón",
+      "Asesoramiento según el tipo de evento y estilismo",
+      "Preparación del cabello con productos de acabado I.C.O.N.",
+      "Elaboración artesanal del recogido o peinado especial",
+      "Fijación flexible y duradera durante horas",
     ],
-    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/galeria/trabajo-b-5.jpg",
     whatsappMessage:
-      "Hola El Salón de Fany, tengo un evento y me gustaría reservar cita para peinado / recogido.",
+      "Hola El Salón de Fany, tengo un evento y me gustaría reservar cita para recogido / peinado especial.",
   },
   {
-    id: "manicura-pedicura-spa",
-    title: "Manicura & Pedicura Spá de Larga Duración",
+    id: "manicura-y-estetica",
+    title: "Servicios de Manicura, Pedicura & Cuidado Facial",
     category: "Eventos y Manicura",
-    tagline: "Manos y pies impecables con esmaltado cuidado, hidratación y mimo en cada detalle.",
+    tagline: "Mimo y perfección en manos, pies y rostro dentro del mismo salón.",
     description:
-      "Cuidado integral de cutículas, limado anatómico, exfoliación e hidratación con masaje relajante para lucir unas manos y pies sanos, elegantes y luminosos.",
+      "Completa tu experiencia de belleza en El Salón de Fany con nuestros servicios de manicura, pedicura y estética facial realizados con máxima higiene y dedicación.",
     duration: "40 – 60 min",
-    priceHint: "Tradicional o Semipermanente",
+    priceHint: "Cuidado integral",
     includes: [
-      "Retirada respetuosa, preparación de uña natural y cuidado de cutículas",
-      "Esmaltado de alta precisión (natural, francés o color de temporada)",
-      "Exfoliación suave y masaje hidratante en manos o pies",
-      "Esterilización rigurosa de todo el instrumental",
+      "Cuidado completo de uñas, cutículas e hidratación",
+      "Esmaltado impecable y duradero",
+      "Servicios de estética facial y diseño de mirada",
+      "Atención cálida y familiar",
     ],
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/hairspa/hairspa4-1.jpg",
     whatsappMessage:
-      "Hola El Salón de Fany, me gustaría reservar cita para manicura o pedicura.",
+      "Hola El Salón de Fany, me gustaría reservar cita para manicura o estética.",
   },
 ];
 
@@ -272,42 +295,42 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "fany",
     name: "Fany",
-    role: "Directora & Fundadora del Salón",
-    experienceBadge: "+20 años en el sector · Docente & Estilista",
-    bio: "Apasionada por la peluquería y el bienestar desde hace casi dos décadas. Antes de inaugurar El Salón de Fany en 2014 junto a la Ciudad de las Artes y las Ciencias, fue profesora en academia de peluquería y estética, formando a nuevas generaciones con rigor técnico y sensibilidad humana.",
-    specialties: ["Diagnóstico Capilar & Color", "Corte y Visagismo", "Rituales Hair Spá I.C.O.N.", "Formación Continua"],
-    quote: "«Mi mayor orgullo es que cada persona que cruza la puerta sienta la tranquilidad de estar en su propia casa y en manos expertas.»",
-    image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80",
+    role: "Directora del salón",
+    experienceBadge: "Fundadora en 2014 · +20 años en el sector",
+    bio: "«Tras casi 20 años trabajando en el sector de la peluquería, y como profesora en una prestigiosa academia de peluquería y estética, decido dar el paso y en 2014 monto mi propio negocio.»",
+    specialties: ["Dirección & Diagnóstico", "Coloración & Corte", "Docencia & Formación", "Experta I.C.O.N."],
+    quote: "«Un salón familiar y profesional en el que hacemos sentir al cliente como en su casa.»",
+    image: "/images/equipo/fany.webp",
   },
   {
     id: "esther",
     name: "Esther",
-    role: "Técnico Colorista & Esteticista Especialista",
-    experienceBadge: "Estética Avanzada & Maderoterapia",
-    bio: "Combina la precisión técnica en coloración y tratamientos capilares con manos expertas en cabina estética, maderoterapia corporal, manicura y rituales relajantes.",
-    specialties: ["Maderoterapia Corporal", "Estética & Manicura Spá", "Coloración y Mechas", "Masaje Craneal"],
-    quote: "«Cuidar el cabello y la piel es también regalar un momento de pausa y bienestar real.»",
-    image: "https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?auto=format&fit=crop&w=800&q=80",
+    role: "Técnico & Esteticista",
+    experienceBadge: "Color, Estética & Maderoterapia",
+    bio: "Especialista tanto en trabajos técnicos de peluquería como en cabina de estética, manicura, maderoterapia y masajes relajantes del cuero cabelludo.",
+    specialties: ["Técnico Colorista", "Esteticista & Manicura", "Maderoterapia", "Hair Spá"],
+    quote: "«En constante formación para ofrecer siempre las mejores técnicas de belleza y bienestar.»",
+    image: "/images/equipo/esther.webp",
   },
   {
     id: "ana",
     name: "Ana",
-    role: "Técnico Capilar & Especialista en Hair Spá",
-    experienceBadge: "Color, Tratamientos I.C.O.N. & Bienestar",
-    bio: "Especialista en terapias de hidratación, detox capilar y técnicas de color luminoso. Su delicadeza en el lavacabezas convierte el Hair Spá en una experiencia inolvidable.",
-    specialties: ["Terapias I.C.O.N.", "Ritual Hair Spá", "Mechas & Brillo", "Peinados y Eventos"],
-    quote: "«Cuando el cuero cabelludo está sano y relajado, el cabello brilla con una fuerza totalmente distinta.»",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    role: "Técnico",
+    experienceBadge: "Especialista en Color & Hair Spá",
+    bio: "Experta en coloraciones, mechas, tratamientos capilares I.C.O.N. y en nuestros rituales de relajación capilar en el lavacabezas.",
+    specialties: ["Coloración & Mechas", "Tratamientos I.C.O.N.", "Masaje Capilar", "Peinados"],
+    quote: "«Cuidamos cada detalle para lograr un acabado luminoso, sano y lleno de vida.»",
+    image: "/images/equipo/ana.webp",
   },
   {
     id: "sebas",
     name: "Sebas",
-    role: "Estilista Unisex & Especialista en Corte",
-    experienceBadge: "Corte Técnico, Estilo & Tendencias",
-    bio: "Domina el corte masculino y femenino con un enfoque actual, versátil y fácil de peinar en casa, cuidando cada ángulo y acabado con máxima dedicación.",
-    specialties: ["Corte Femenino y Masculino", "Styling & Brushing", "Asesoramiento de Imagen", "Cuidado Unisex"],
-    quote: "«Un buen corte se nota el primer día en el salón, pero sobre todo cuando te peinas fácilmente en casa semanas después.»",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    role: "Estilista",
+    experienceBadge: "Corte Unisex, Estilo & Tendencias",
+    bio: "Estilista apasionado por el corte femenino y masculino, las nuevas tendencias y el asesoramiento personalizado para renovar tu look.",
+    specialties: ["Corte Unisex", "Renovación de Look", "Styling & Brushing", "Tendencias"],
+    quote: "«Adaptamos cada corte y estilo a tu personalidad para que te veas increíble cada día.»",
+    image: "/images/equipo/sebas.webp",
   },
 ];
 
@@ -319,7 +342,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     dateLabel: "Reseña verificada en Google",
     serviceTag: "Trato Familiar & Corte Unisex",
     excerpt:
-      "Un salón de diez en Valencia. El trato de Fany y todo el equipo es súper cercano y profesional; te hacen sentir literalmente como en casa desde el primer minuto y el resultado del corte siempre es impecable.",
+      "Un salón de diez en Valencia. El trato de Fany y todo el equipo es súper cercano y profesional; te hacen sentir literalmente como en casa desde el primer minuto y el resultado siempre es impecable.",
     verified: true,
   },
   {
@@ -349,7 +372,7 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     dateLabel: "Reseña verificada en Google",
     serviceTag: "Corte para Sanear & Asesoramiento",
     excerpt:
-      "Fui para sanear mi melena y dar forma sin perder largo y entendieron a la perfección lo que quería. Tanto Fany como las chicas, incluidas Isa y Mónica, son un encanto y cuidan cada detalle.",
+      "Fui para sanear mi melena y dar forma sin perder largo y entendieron a la perfección lo que quería. Todo el equipo es un encanto y cuidan cada detalle.",
     verified: true,
   },
   {
@@ -396,87 +419,123 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
-    id: "gal-1",
-    title: "Balayage Caramelo & Brillo I.C.O.N.",
-    category: "Color y Mechas",
-    caption: "Iluminación cálida dimensional trabajada sin castigar la fibra y sellada con ritual de nutrición I.C.O.N.",
-    technique: "Balayage a mano alzada + Gloss",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80",
-    aspect: "aspect-[4/5]",
+    id: "gal-b1",
+    title: "Coloración & Brillo I.C.O.N.",
+    category: "Trabajos & Color",
+    caption: "Trabajo real en El Salón de Fany con productos oficiales I.C.O.N. para una melena luminosa y cuidada.",
+    technique: "Coloración & Brushing",
+    image: "/images/galeria/trabajo-b-1.jpg",
   },
   {
-    id: "gal-2",
-    title: "Zona Hair Spá & Masaje Craneal",
+    id: "gal-b2",
+    title: "Mechas & Iluminación Dimensional",
+    category: "Trabajos & Color",
+    caption: "Degradado natural de luz trabajado por nuestro equipo técnico en Valencia.",
+    technique: "Mechas & Matiz I.C.O.N.",
+    image: "/images/galeria/trabajo-b-2.jpg",
+  },
+  {
+    id: "gal-b3",
+    title: "Corte para Sanear & Movimiento",
+    category: "Trabajos & Color",
+    caption: "Acabado sedoso, puntas saneadas y vitalidad renovada.",
+    technique: "Corte & Tratamiento",
+    image: "/images/galeria/trabajo-b-3.jpg",
+  },
+  {
+    id: "gal-b4",
+    title: "Ondas Suaves & Color Personalizado",
+    category: "Trabajos & Color",
+    caption: "Peinado con movimiento y brillo espejo tras tratamiento hidratante.",
+    technique: "Styling & Color",
+    image: "/images/galeria/trabajo-b-4.jpg",
+  },
+  {
+    id: "gal-b5",
+    title: "Peinado Especial & Eventos",
+    category: "Trabajos & Color",
+    caption: "Creación a medida para lucir impecable en ocasiones especiales.",
+    technique: "Recogidos & Eventos",
+    image: "/images/galeria/trabajo-b-5.jpg",
+  },
+  {
+    id: "gal-b6",
+    title: "Rubios Luminosos & Fibra Sana",
+    category: "Trabajos & Color",
+    caption: "Máximo respeto por la fibra capilar con líneas botánicas I.C.O.N.",
+    technique: "Balayage & Nutrición",
+    image: "/images/galeria/trabajo-b-6.jpg",
+  },
+  {
+    id: "gal-b7",
+    title: "Estilo, Textura & Volumen",
+    category: "Trabajos & Color",
+    caption: "Asesoramiento personalizado para resaltar tu estilo natural.",
+    technique: "Estilismo Unisex",
+    image: "/images/galeria/trabajo-b-7.jpg",
+  },
+  {
+    id: "gal-b8",
+    title: "Melena Hidratada & Radiante",
+    category: "Trabajos & Color",
+    caption: "Resultado real en nuestro salón junto a la Ciudad de las Artes y las Ciencias.",
+    technique: "Terapia Capilar I.C.O.N.",
+    image: "/images/galeria/trabajo-b-8.jpg",
+  },
+  {
+    id: "gal-hs1",
+    title: "Ritual Hair Spá & Masaje Craneal",
     category: "Hair Spá",
-    caption: "Nuestro rincón de calma diseñado para que el lavado y masaje del cuero cabelludo sean un auténtico ritual de desconexión.",
-    technique: "Aromaterapia + Masaje Craneocervical",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80",
-    aspect: "aspect-[4/5]",
+    caption: "Nuestras clientas aman nuestros masajes en el cuero cabelludo mientras aplicamos los tratamientos.",
+    technique: "Relajación Capilar",
+    image: "/images/hairspa/hairspa1.jpg",
   },
   {
-    id: "gal-3",
-    title: "Corte Saneado con Movimiento Natural",
-    category: "Corte y Peinado",
-    caption: "Capas invisibles y puntas saneadas que devuelven ligereza, volumen y facilidad de peinado en casa.",
-    technique: "Corte texturizado + Brushing suave",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=80",
-    aspect: "aspect-[4/5]",
+    id: "gal-hs2",
+    title: "Bienestar en el Lavacabezas",
+    category: "Hair Spá",
+    caption: "Cierras los ojos, respiras profundo y sientes cómo desaparecen las preocupaciones.",
+    technique: "Hair Spá Valencia",
+    image: "/images/hairspa/hairspa4.jpg",
   },
   {
-    id: "gal-4",
-    title: "Nuestro Salón en Antonio Sacramento 17",
-    category: "Salón",
-    caption: "Un espacio luminoso, acogedor y familiar a pocos pasos de la Ciudad de las Artes y las Ciencias de Valencia.",
-    technique: "Ambiente Warm Boutique",
-    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80",
-    aspect: "aspect-[4/5]",
+    id: "gal-hs3",
+    title: "Tratamiento & Calma Sensorial",
+    category: "Hair Spá",
+    caption: "Cuidamos tu cabello y tu bienestar corporal en cada sesión.",
+    technique: "Masaje & Aromaterapia",
+    image: "/images/hairspa/hairspa4-1.jpg",
   },
   {
-    id: "gal-5",
-    title: "Babylights Rubias & Matiz Champagne",
-    category: "Color y Mechas",
-    caption: "Transición suave desde la raíz para un efecto luminoso muy natural y de bajo mantenimiento.",
-    technique: "Micro-mechas + Tratamiento Inner",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1000&q=80",
-    aspect: "aspect-[4/5]",
+    id: "gal-hs4",
+    title: "Experiencia de Relajación Total",
+    category: "Hair Spá",
+    caption: "Un momento pensado exclusivamente para desconectar y renovar tu energía.",
+    technique: "Ritual Bienestar",
+    image: "/images/hairspa/hairspa3.jpg",
   },
   {
-    id: "gal-6",
-    title: "Recogido Editorial para Invitada y Eventos",
-    category: "Corte y Peinado",
-    caption: "Textura artesanal y sujeción cómoda pensada para lucir radiante durante toda la celebración.",
-    technique: "Recogido a medida + Fijación flexible",
-    image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=80",
-    aspect: "aspect-[4/5]",
-  },
-];
-
-export const ICON_PRODUCTS: IconProduct[] = [
-  {
-    id: "icon-india",
-    name: "Línea I.C.O.N. India (Moringa & Argán)",
-    line: "Hair-Yurvedics · Nutrición y Brillo",
-    benefit: "Transforma al instante el cabello apagado o encrespado aportando sedosidad, luz y aroma exótico.",
-    description: "Aceite seco, champú y acondicionador enriquecidos con aceite de moringa y argán para reparar sin apelmazar.",
-    badge: "Top Ventas en Salón",
-    image: "https://images.unsplash.com/photo-1608248597359-0e6d526a6c58?auto=format&fit=crop&w=800&q=80",
+    id: "gal-sal1",
+    title: "Interior de El Salón de Fany",
+    category: "El Salón",
+    caption: "Nuestro salón en Carrer d'Antonio Sacramento, 17-2 (Valencia).",
+    technique: "Ambiente Familiar",
+    image: "/images/salon/salon-1.jpg",
   },
   {
-    id: "icon-hydration",
-    name: "I.C.O.N. Drench, Free & Inner Home",
-    line: "Regimedy Hidratación Profunda",
-    benefit: "Devuelve la elasticidad y la hidratación interna a melenas secas, coloreadas o expuestas al sol de Valencia.",
-    description: "El trío favorito de nuestras clientas para mantener en casa el efecto sedoso de nuestro Hair Spá.",
-    badge: "Esencial Hidratación",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
+    id: "gal-sal2",
+    title: "Zona de Estilismo & Tocadores",
+    category: "El Salón",
+    caption: "Espacio acogedor, luminoso y dinámico para sentirte como en tu propia casa.",
+    technique: "Nuestro Salón",
+    image: "/images/salon/salon-2.jpg",
   },
   {
-    id: "icon-detox",
-    name: "I.C.O.N. Shift, Energy & Awake",
-    line: "Regimedy Detox & Cuero Cabelludo",
-    benefit: "Purifica el folículo, equilibra el cuero cabelludo y estimula una sensación refrescante de bienestar.",
-    description: "La base perfecta de nuestro ritual de masaje capilar relajante para oxigenar y revitalizar desde la raíz.",
-    badge: "Ritual Hair Spá",
-    image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=800&q=80",
+    id: "gal-sal3",
+    title: "Espacio Hair Spá & Productos I.C.O.N.",
+    category: "El Salón",
+    caption: "Equipado con las mejores marcas profesionales para el cuidado capilar.",
+    technique: "Salón Oficial I.C.O.N.",
+    image: "/images/salon/salon-3.jpg",
   },
 ];

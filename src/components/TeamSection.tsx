@@ -12,63 +12,61 @@ export function TeamSection() {
     <section
       id="equipo"
       aria-labelledby="team-heading"
-      className="py-16 sm:py-20 lg:py-24 bg-sand/60 border-b border-borderWarm scroll-mt-20"
+      className="py-16 sm:py-20 lg:py-24 bg-ivory border-b border-borderWarm scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
-        {/* Historia de Fany y Filosofía del Salón */}
+        {/* Historia de Fany y Filosofía del Equipo (Textos originales de elsalondefany.com) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-5">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ivory border border-champagne/50 text-xs font-semibold uppercase tracking-widest text-terracotta">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sand border border-champagne/50 text-xs font-semibold uppercase tracking-widest text-terracotta">
               <Heart className="w-3.5 h-3.5" />
-              <span>Nuestra Historia · Desde 2014 en Valencia</span>
+              <span>Equipo · Desde 2014 en Valencia</span>
             </span>
 
             <h2
               id="team-heading"
               className="font-serif text-fluid-h2 font-semibold text-charcoal leading-tight"
             >
-              Casi 20 años de vocación, docencia y pasión por{" "}
-              <span className="italic font-normal text-terracotta">cuidar de ti</span>
+              Conoce al equipo profesional de{" "}
+              <span className="italic font-normal text-terracotta">El Salón de Fany</span>
             </h2>
 
             <p className="text-fluid-body text-warmGray leading-relaxed">
-              Detrás de <strong className="text-charcoal">El Salón de Fany</strong> está la trayectoria de{" "}
-              <strong className="text-charcoal">Fany</strong>, directora y alma del salón. Tras casi dos décadas
-              en el sector y años como <strong>profesora en academia de peluquería y estética</strong>, en{" "}
-              <strong>2014</strong> cumplió su sueño de abrir su propio espacio en{" "}
-              <em>Carrer d&apos;Antonio Sacramento, 17-2</em>, junto a la Ciudad de las Artes y las Ciencias.
+              «Tras casi 20 años trabajando en el sector de la peluquería, y como profesora en una prestigiosa
+              academia de peluquería y estética, decido dar el paso y en <strong>2014</strong> monto mi propio
+              negocio.»
             </p>
 
             <p className="text-fluid-body text-warmGray leading-relaxed">
-              Hoy lideramos un equipo humano en <strong>formación continua</strong> —junto a{" "}
-              <strong className="text-charcoal">Esther, Ana y Sebas</strong>, y el cariño de profesionales muy
-              queridas por nuestra clientela como <strong className="text-charcoal">Isa y Mónica</strong>— con
-              una única misión: que cada visita sea tu momento favorito de la semana.
+              En <strong className="text-charcoal">El Salón de Fany</strong>, somos un equipo en{" "}
+              <strong className="text-charcoal">constante formación</strong> para poder ofrecer a nuestros
+              clientes los mejores servicios y las nuevas tendencias, manteniendo siempre ese trato cercano que te
+              hace sentir como en casa.
             </p>
 
             {/* 3 Pilares Diferenciales */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
-              <div className="p-4 rounded-2xl bg-white border border-borderWarm space-y-1.5">
+              <div className="p-4 rounded-2xl bg-white border border-borderWarm space-y-1.5 shadow-sm">
                 <GraduationCap className="w-5 h-5 text-terracotta" />
-                <p className="font-serif text-lg font-semibold text-charcoal">Experiencia Docente</p>
+                <p className="font-serif text-lg font-semibold text-charcoal">Formación Continua</p>
                 <p className="text-xs text-warmGray leading-relaxed">
-                  Diagnóstico técnico riguroso y formación constante en color, corte y estética.
+                  Experiencia docente y actualización constante en las últimas tendencias.
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white border border-borderWarm space-y-1.5">
+              <div className="p-4 rounded-2xl bg-white border border-borderWarm space-y-1.5 shadow-sm">
                 <Users className="w-5 h-5 text-terracotta" />
-                <p className="font-serif text-lg font-semibold text-charcoal">Ambiente Familiar</p>
+                <p className="font-serif text-lg font-semibold text-charcoal">Trato Familiar</p>
                 <p className="text-xs text-warmGray leading-relaxed">
-                  Un trato cercano, honesto y sin prisas donde te escuchamos de verdad.
+                  Un equipo cercano y profesional donde cada cliente se siente como en su casa.
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white border border-borderWarm space-y-1.5">
+              <div className="p-4 rounded-2xl bg-white border border-borderWarm space-y-1.5 shadow-sm">
                 <Award className="w-5 h-5 text-terracotta" />
                 <p className="font-serif text-lg font-semibold text-charcoal">Calidad I.C.O.N.</p>
                 <p className="text-xs text-warmGray leading-relaxed">
-                  Fórmulas botánicas respetuosas con el cuero cabelludo y el medio ambiente.
+                  Técnica experta acompañada de productos botánicos de altísima calidad.
                 </p>
               </div>
             </div>
@@ -79,23 +77,23 @@ export function TeamSection() {
             <div className="p-7 sm:p-8 rounded-3xl bg-charcoal text-ivory border border-champagne/40 shadow-editorial space-y-5 relative">
               <Sparkles className="w-8 h-8 text-champagne" />
               <blockquote className="font-serif text-2xl sm:text-3xl italic leading-snug text-ivory">
-                «No queremos ser una peluquería de paso; queremos ser ese lugar de confianza en Valencia donde
-                te relajas, te cuidan y sales brillando.»
+                «Tras casi 20 años trabajando en el sector de la peluquería y como profesora en academia, en 2014
+                creé El Salón de Fany para unir excelencia profesional y calidez humana.»
               </blockquote>
               <div className="pt-3 border-t border-ivory/15 flex items-center justify-between">
                 <div>
                   <p className="font-semibold text-ivory text-base">Fany</p>
-                  <p className="text-xs text-champagne">Directora de El Salón de Fany · Fundado en 2014</p>
+                  <p className="text-xs text-champagne">Directora del salón · Fundado en 2014</p>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-ivory/10 text-champagne text-xs font-semibold">
-                  +20 años exp.
+                  Directora
                 </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Grid de Miembros del Equipo */}
+        {/* Grid de Empleados con sus Fotografías Reales Originales (Fany, Esther, Ana, Sebas) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TEAM_MEMBERS.map((member, index) => (
             <motion.article
@@ -104,27 +102,28 @@ export function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: prefersReducedMotion ? 0.01 : 0.4, delay: index * 0.08 }}
-              className="rounded-3xl bg-white border border-borderWarm shadow-editorial overflow-hidden flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1"
+              className="rounded-3xl bg-white border border-borderWarm shadow-editorial overflow-hidden flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1 group"
             >
               <div>
-                <div className="relative aspect-[4/4] bg-sand overflow-hidden">
+                {/* Retrato vertical oficial 9:16 / 3:4 sin recortar caras */}
+                <div className="relative aspect-[3/4] bg-sand overflow-hidden">
                   <img
                     src={member.image}
-                    alt={`${member.name} - ${member.role} en El Salón de Fany`}
+                    alt={`${member.name} — ${member.role} en El Salón de Fany`}
                     loading="lazy"
-                    width={600}
-                    height={600}
-                    className="w-full h-full object-cover object-center"
+                    width={576}
+                    height={768}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3.5 right-3.5">
-                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-terracotta text-white text-[11px] font-semibold mb-1">
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/15 to-transparent" />
+                  <div className="absolute bottom-3.5 left-4 right-4">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-terracotta text-white text-[11px] font-semibold mb-1.5 shadow-sm">
                       {member.experienceBadge}
                     </span>
-                    <h3 className="font-serif text-2xl font-semibold text-ivory leading-none">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-ivory leading-none">
                       {member.name}
                     </h3>
-                    <p className="text-xs text-champagne font-medium mt-0.5">{member.role}</p>
+                    <p className="text-xs sm:text-sm text-champagne font-semibold mt-1">{member.role}</p>
                   </div>
                 </div>
 
@@ -143,7 +142,7 @@ export function TeamSection() {
                 </div>
               </div>
 
-              <div className="px-5 pb-5 pt-2">
+              <div className="px-5 pb-5 pt-1">
                 <p className="p-3 rounded-xl bg-ivory border border-borderWarm text-xs italic text-charcoal/85">
                   {member.quote}
                 </p>
