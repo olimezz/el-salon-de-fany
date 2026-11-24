@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-ivory: #FAF7F4;
+  --surface-white: #FFFFFF;
+  --surface-sand: #F3ECE4;
+  --brand-charcoal: #1E1B18;
+  --accent-terracotta: #A66A46;
+  --accent-champagne: #C89D7C;
+  --text-secondary: #5A524A;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-ivory);
+  color: var(--brand-charcoal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--bg-ivory);
+  color: var(--brand-charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilidad para ocultar scrollbars horizontales en filtros móviles manteniendo accesibilidad */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
