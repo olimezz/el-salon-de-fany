@@ -50,9 +50,19 @@ export function HeroSection({ onOpenBookingModal }: HeroSectionProps) {
     <section
       id="el-salon"
       aria-labelledby="el-salon-heading"
-      className="relative overflow-hidden pt-6 pb-16 sm:pt-10 sm:pb-20 lg:py-20 bg-gradient-to-b from-white via-ivory to-sand/50 border-b border-borderWarm scroll-mt-20"
+      className="relative overflow-hidden pt-6 pb-16 sm:pt-10 sm:pb-20 lg:py-20 bg-gradient-to-b from-ivory via-ivory to-sand/40 border-b border-borderWarm scroll-mt-20"
     >
-      {/* Elementos decorativos sutiles */}
+      {/* Elementos decorativos sutiles y marca de agua floral mimetizada en el fondo */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-10 -left-10 w-96 h-96 opacity-[0.05] select-none mix-blend-multiply"
+      >
+        <img
+          src="/images/logo-el-salon-de-fany-transparent.png"
+          alt=""
+          className="w-full h-full object-contain filter grayscale"
+        />
+      </div>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-32 -right-32 w-96 h-96 rounded-full bg-champagne/15 blur-3xl"
@@ -67,25 +77,20 @@ export function HeroSection({ onOpenBookingModal }: HeroSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Columna Izquierda: Logo Floral, Información de El Salón & CTAs */}
           <div className="lg:col-span-6 space-y-6">
-            {/* Emblema Floral Oficial de El Salón de Fany + Etiqueta de sección */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="bg-white px-5 py-3 rounded-2xl border border-borderWarm shadow-sm inline-flex items-center justify-center w-fit">
+            {/* Logo Floral Oficial mimetizado directamente sobre el fondo (sin recuadro) */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <img
                   src={SALON_INFO.logoUrl}
-                  alt="Logo El Salón de Fany — Belleza & Spa"
-                  width={220}
-                  height={112}
-                  className="h-16 sm:h-20 w-auto object-contain"
+                  alt="El Salón de Fany — Belleza & Spa"
+                  width={300}
+                  height={176}
+                  className="h-24 sm:h-28 w-auto object-contain mix-blend-multiply drop-shadow-none"
                 />
-              </div>
-              <div className="space-y-1">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sand border border-champagne/40 text-xs font-semibold uppercase tracking-widest text-terracotta">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/80 border border-champagne/40 text-xs font-semibold uppercase tracking-widest text-terracotta w-fit">
                   <MapPin className="w-3.5 h-3.5 text-terracotta shrink-0" />
-                  <span>El Salón · Valencia</span>
-                </span>
-                <p className="text-xs text-warmGray font-medium">
-                  Junto a la Ciudad de las Artes y las Ciencias
-                </p>
+                  <span>Junto a la Ciudad de las Artes y las Ciencias · Valencia</span>
+                </div>
               </div>
             </div>
 

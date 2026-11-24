@@ -82,12 +82,12 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-editorial border-b border-borderWarm py-2"
-            : "bg-white/95 backdrop-blur-sm py-2.5 border-b border-borderWarm/70"
+            ? "bg-ivory/95 backdrop-blur-md shadow-editorial border-b border-borderWarm py-2"
+            : "bg-ivory/90 backdrop-blur-sm py-2.5 border-b border-borderWarm/70"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
-          {/* Logo Floral Oficial de El Salón de Fany */}
+          {/* Logo Floral Oficial de El Salón de Fany mimetizado en el fondo */}
           <Link
             href="/"
             className="group flex items-center gap-3 min-h-[48px] focus:outline-none shrink-0"
@@ -97,9 +97,9 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
               src={SALON_INFO.logoUrl}
               alt="El Salón de Fany — Belleza & Spa"
               width={185}
-              height={95}
+              height={108}
               fetchPriority="high"
-              className="h-12 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-12 sm:h-15 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
@@ -171,13 +171,13 @@ export function Header({ onOpenBookingModal, isDrawerOpen, setIsDrawerOpen }: He
           aria-label="Menú móvil de El Salón de Fany"
           className="fixed inset-0 z-[65] lg:hidden flex flex-col bg-ivory text-charcoal overflow-y-auto"
         >
-          <div className="px-4 py-3 border-b border-borderWarm flex items-center justify-between bg-white">
+          <div className="px-4 py-3 border-b border-borderWarm flex items-center justify-between bg-sand/60">
             <img
               src={SALON_INFO.logoUrl}
               alt="El Salón de Fany — Belleza & Spa"
               width={150}
-              height={76}
-              className="h-12 w-auto object-contain"
+              height={88}
+              className="h-11 w-auto object-contain mix-blend-multiply"
             />
             <button
               type="button"

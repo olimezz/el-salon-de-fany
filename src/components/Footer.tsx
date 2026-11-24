@@ -24,16 +24,16 @@ export function Footer() {
     <footer className="bg-charcoal text-ivory pt-16 pb-24 md:pb-12 border-t border-champagne/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          {/* Columna 1: Logo Floral Oficial & Filosofía */}
+          {/* Columna 1: Logo Oficial & Filosofía */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="bg-white p-3.5 rounded-2xl inline-block shadow-sm">
+            <div className="inline-block">
               <img
-                src={SALON_INFO.logoUrl}
-                alt="El Salón de Fany — Belleza & Spa"
-                width={180}
-                height={92}
+                src="/images/logo-fany-white.png"
+                alt="El Salón de Fany"
+                width={190}
+                height={75}
                 loading="lazy"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
 

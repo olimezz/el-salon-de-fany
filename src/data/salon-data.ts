@@ -80,7 +80,8 @@ export const SALON_INFO = {
   googleReviewsCount: 122,
   bookingUrl: "https://booksy.com/es-es/69875_el-salon-de-fany_peluqueria_58087_valencia",
   shopUrl: "https://iconencasa.com/?ref=2362",
-  logoUrl: "/images/logo-el-salon-de-fany.png",
+  logoUrl: "/images/logo-el-salon-de-fany-transparent.png",
+  logoWhiteUrl: "/images/logo-fany-white.png",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=El+Sal%C3%B3n+de+Fany+Carrer+d%27Antonio+Sacramento+17-2+46013+Valencia",
   googleMapsEmbedUrl:
